@@ -5,7 +5,7 @@ import { Component } from 'react';
 
 export default class App extends Component {
   render() {
-    
+    // Form fields object goes here
     return(
       <div className="app-wrapper">
         <header className="app-header">

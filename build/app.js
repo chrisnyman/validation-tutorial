@@ -58,7 +58,7 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'render',
     value: function render() {
-
+      // Form fields object goes here
       return React.createElement(
         'div',
         { className: 'app-wrapper' },
