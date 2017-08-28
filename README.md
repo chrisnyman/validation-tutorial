@@ -43,7 +43,7 @@ const formfields = {
     name: 'name', // Required
     stateName: 'name', // Required
     type: 'text', // Required
-    title: 'Name' // Required
+    title: 'Name'
     value: this.state.name, // Required
     required: true
   },
@@ -97,11 +97,13 @@ const formfields = {
   onSubmit={() => this.formSubmitted()}
   handleInputChange={(v, t) => this.handleChange(v, t)}>
     {({ fields }) => (
-      {fields.name}
-      {fields.email}
-      {fields.birthdate}
-      {fields.favoriteAnimal}
-      <button>Submit Form</button>
+      <div>
+        {fields.name}
+        {fields.email}
+        {fields.birthdate}
+        {fields.favoriteAnimal}
+        <button>Submit Form</button>
+      </div>
     )}
 </GCForm>
 ```

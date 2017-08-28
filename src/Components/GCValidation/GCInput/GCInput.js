@@ -325,8 +325,17 @@ class GCInput extends Component {
 
   render() {
     if (this.props.isVisible) {
+      const requiredClass = this.props.required ? 'gc-input__label--required' : '';
       return (
         <div className={`gc-input ${this.props.extendedClassNames}`}>
+          {this.props.type === 'date' && (
+            <label
+              className={`gc-input__label ${requiredClass}`}
+              htmlFor={this.props.name}>
+              {this.props.title}
+            </label>
+          )}
+
           {this.renderInput()}
 
           {this.props.title !== "" && this.props.type !== 'select' && this.props.type !== 'radio' && this.props.type !== 'date' && (
@@ -370,8 +379,8 @@ GCInput.propTypes = {
   placeholder: PropTypes.string,
   maxLength: PropTypes.number,
   minLength: PropTypes.number,
-  maxDate: PropTypes.string,
-  minDate: PropTypes.string,
+  maxDate: PropTypes.object,
+  minDate: PropTypes.object,
   max: PropTypes.number,
   min: PropTypes.number,
   onChange: PropTypes.func.isRequired,

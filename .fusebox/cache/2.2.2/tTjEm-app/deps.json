@@ -169,7 +169,9 @@
         "factory.js",
         "factoryWithTypeCheckers.js",
         "lib/ReactPropTypesSecret.js",
-        "checkPropTypes.js"
+        "checkPropTypes.js",
+        "index.js",
+        "factoryWithThrowingShims.js"
       ]
     },
     "create-react-class@15.6.0": {

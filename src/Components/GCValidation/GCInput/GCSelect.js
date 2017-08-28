@@ -12,7 +12,7 @@ class GCSelect extends Component {
       isActive: false,
       searchActive: false,
       index: -1,
-      selection: this.getValue(props.options, this.props.value),
+      selection: this.getValue(props.options, this.props.value) || '',
     };
   }
 
