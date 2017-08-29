@@ -3,7 +3,7 @@ A small little tutorial to get the basics of the GradConnection form validation 
 ## Setup
 **Step 1:** Clone repository
 
-**Step 2:** Make sure you're running the latest version of node
+**Step 2:** Make sure you're running node 6+
 
 **Step 3:** Run `npm install`
 
