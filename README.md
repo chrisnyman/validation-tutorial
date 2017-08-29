@@ -23,6 +23,8 @@ Does not have to be used with GCForm
 
 **Step 3:** Run `npm install`
 
+**Step 4:** Run `node fuse`
+
 ## Tutorial
 
 The aim of this tutorial is create a basic form that asks a user for their name, email address, birthdate and their favorite animal.
