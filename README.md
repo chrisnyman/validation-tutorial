@@ -21,9 +21,7 @@ Does not have to be used with GCForm
 
 **Step 2:** Make sure you're running node 6+
 
-**Step 3:** Run `npm install`
-
-**Step 4:** Run `node fuse`
+**Step 3:** Run `node fuse`
 
 ## Tutorial
 
