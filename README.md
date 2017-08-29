@@ -29,13 +29,13 @@ Does not have to be used with GCForm
 
 The aim of this tutorial is create a basic form that asks a user for their name, email address, birthdate and their favorite animal.
 
-**Requirements**
+**Form field requirements**
 
 - The _name_ and _email_ fields are compulsory.
 - The user should be older than 5 years old and an appropriate error message should be displayed, e.g. _User must be older than 5_.
 - The _favorite animal_ field should be a select type input and should only be rendered if the _name_ field starts with the letter _F_.
 
-** Usage Guide **
+**Instructions**
 
 1. Import 'GCForm' from Components folder
 2. Set up state for form and add handler fn.
