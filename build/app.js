@@ -44,6 +44,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -70,9 +72,7 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'handleChange',
     value: function handleChange(value, type) {
-      var obj = {};
-      obj[type] = value;
-      this.setState(obj);
+      this.setState(_defineProperty({}, type, value));
     }
   }, {
     key: 'formSubmitted',
@@ -111,7 +111,8 @@ var App = function (_Component) {
           type: 'date',
           title: 'Date of Birth',
           value: this.state.birthdate,
-          minDate: minAgeDate
+          customErrorMessage: 'User must be at least 5 years old',
+          maxDate: minAgeDate
         },
         favoriteAnimal: {
           name: 'favoriteAnimal',
@@ -532,13 +533,13 @@ var GCInput = function (_Component) {
       if (this.props.maxDate !== null && this.props.minDate !== null) {
         max = new Date(this.props.maxDate);
         min = new Date(this.props.minDate);
-        return this.handleErrorMessage(min >= selectedDate && max <= selectedDate, 'Please select a date between ' + min.toDateString() + ' and ' + max.toDateString());
+        return this.handleErrorMessage(min <= selectedDate && max >= selectedDate, 'Please select a date between ' + min.toDateString() + ' and ' + max.toDateString());
       } else if (this.props.minDate !== null) {
         min = new Date(this.props.minDate);
-        return this.handleErrorMessage(min >= selectedDate, 'Please select a date after ' + min.toDateString());
+        return this.handleErrorMessage(min <= selectedDate, 'Please select a date after ' + min.toDateString());
       } else if (this.props.maxDate !== null) {
         max = new Date(this.props.maxDate);
-        return this.handleErrorMessage(max <= selectedDate, 'Please select a date before ' + max.toDateString());
+        return this.handleErrorMessage(max >= selectedDate, 'Please select a date before ' + max.toDateString());
       }
     }
   }, {

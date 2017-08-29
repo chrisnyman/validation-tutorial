@@ -15,9 +15,7 @@ export default class App extends Component {
   }
 
   handleChange(value, type) {
-    const obj = {};
-    obj[type] = value;
-    this.setState(obj);
+    this.setState({[type]: value});
   }
 
   formSubmitted() {
@@ -52,7 +50,8 @@ export default class App extends Component {
         type: 'date',
         title: 'Date of Birth',
         value: this.state.birthdate,
-        minDate: minAgeDate,
+        customErrorMessage: 'User must be at least 5 years old',
+        maxDate: minAgeDate,
       },
       favoriteAnimal: {
         name: 'favoriteAnimal',

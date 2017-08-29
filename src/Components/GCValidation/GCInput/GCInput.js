@@ -153,13 +153,13 @@ class GCInput extends Component {
     if(this.props.maxDate !== null && this.props.minDate !== null) {
       max = new Date(this.props.maxDate);
       min = new Date(this.props.minDate);
-      return this.handleErrorMessage(min >= selectedDate && max <= selectedDate, `Please select a date between ${min.toDateString()} and ${max.toDateString()}`);
+      return this.handleErrorMessage(min <= selectedDate && max >= selectedDate, `Please select a date between ${min.toDateString()} and ${max.toDateString()}`);
     } else if(this.props.minDate !== null) {
       min = new Date(this.props.minDate);
-      return this.handleErrorMessage(min >= selectedDate, `Please select a date after ${min.toDateString()}`);
+      return this.handleErrorMessage(min <= selectedDate, `Please select a date after ${min.toDateString()}`);
     } else if (this.props.maxDate !== null) {
       max = new Date(this.props.maxDate);
-      return this.handleErrorMessage(max <= selectedDate, `Please select a date before ${max.toDateString()}`);
+      return this.handleErrorMessage(max >= selectedDate, `Please select a date before ${max.toDateString()}`);
     }
   }
 
