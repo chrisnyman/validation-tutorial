@@ -82,60 +82,7 @@ var App = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
-      var today = new Date();
-      var thisYear = today.getFullYear();
-      var minAgeDate = new Date(thisYear - 5, 1, 1);
-
-      var formFields = {
-        name: {
-          name: 'name', // Required
-          stateName: 'name', // Required
-          type: 'text', // Required
-          title: 'Name',
-          value: this.state.name, // Required
-          required: true
-        },
-        email: {
-          name: 'emailAddress',
-          stateName: 'email',
-          type: 'email',
-          title: 'Email Address',
-          value: this.state.email,
-          required: true
-        },
-        birthdate: {
-          name: 'birthdate',
-          stateName: 'birthdate',
-          type: 'date',
-          title: 'Date of Birth',
-          value: this.state.birthdate,
-          customErrorMessage: 'User must be at least 5 years old',
-          maxDate: minAgeDate
-        },
-        favoriteAnimal: {
-          name: 'favoriteAnimal',
-          stateName: 'favoriteAnimal',
-          type: 'select',
-          title: 'Favorite Animal',
-          value: this.state.favoriteAnimal,
-          isVisible: this.state.name.charAt(0) === 'F' || this.state.name.charAt(0) === 'f',
-          options: [{
-            label: 'Unicorn',
-            value: 'unicorn'
-          }, {
-            label: 'Pheonix',
-            value: 'pheonix'
-          }, {
-            label: 'Dragon',
-            value: 'dragon'
-          }, {
-            label: 'Goldfish',
-            value: 'goldfish'
-          }]
-        }
-      };
+      // Form fields object goes here
       return React.createElement(
         'div',
         { className: 'app-wrapper' },
@@ -149,31 +96,9 @@ var App = function (_Component) {
           )
         ),
         React.createElement(
-          _GCForm2.default,
-          {
-            data: formFields,
-            onSubmit: function onSubmit() {
-              return _this2.formSubmitted();
-            },
-            handleInputChange: function handleInputChange(v, t) {
-              return _this2.handleChange(v, t);
-            } },
-          function (_ref) {
-            var fields = _ref.fields;
-            return React.createElement(
-              'div',
-              null,
-              fields.name,
-              fields.email,
-              fields.birthdate,
-              fields.favoriteAnimal,
-              React.createElement(
-                'button',
-                null,
-                'Submit Form'
-              )
-            );
-          }
+          'p',
+          null,
+          '// GCForm goes here '
         )
       );
     }
